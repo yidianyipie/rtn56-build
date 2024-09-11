@@ -2,17 +2,22 @@
 name: Build Padavan
 
 on: 
-  release:
-    types: [published]
-  push:
-    tags:
-    - 'v*'
-  #  branches: 
-  #    - master
+  push: 
+    branches:
+      - master
+    paths:                           
+      - trigger/660x.md
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 #  schedule:
 #    - cron: 0 8 * * 5
-  watch:
-    types: [started]
+  # watch:
+  #   types: [started]
 
 jobs:
   build:
