@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:                           
-      - trigger/660x.md
+      - trigger/cr660x.md
   repository_dispatch:
   workflow_dispatch:
     inputs:
